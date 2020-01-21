@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="js/javascript.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Energy Band Gap Simulation</title>
+</head>
+
+<body>
+    <div style="text-align: center;display: none">X : <span id="mouseX"
+            style="border: 1px solid black; padding: 5px 20px; display: inline-block;">0</span> Y: <span id="mouseY"
+            style="border: 1px solid black; padding: 5px 20px; display: inline-block;">0</span>
+    </div>
+    <div class="container-fluid mt-4" style="height: 100vh;">
+        <h2 class="text-center bg-info p-3 text-white" style="border-radius: 15px;margin: -15px 40px 0 40px ">Energy Band Gap Simulation</h2>
+        <div class="row" style="justify-content: left;">
+            <div class="col-xs-8 ml-5" style="border: 20px solid grey;margin: 10px 0 0 0;border-radius: 20px; inset green; box-shadow: 0px 0px 20px #bbb;">
+                <canvas id="myCanvas" s>
+
+                </canvas>
+            </div>
+            <div class="col-xs-4 ml-4 mt-3">
+                <div class="row">
+                    <div class="col mt-2">
+                        <button vlab-action="STOP_SIMULATION" class="btn btn-danger">Power ON</button>
+                    </div>
+                    <div class="col mt-2">
+                        <button vlab-action="START_SIMULATION" class="btn btn-success">Power OFF</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-2">
+                        <button  vlab-action="DRAW_RESISTOR" class="btn btn-primary">P-N Diode</button>
+                    </div>
+                    <div class="col mt-2">
+                        <button vlab-action="DRAW_CELL" class="btn btn-primary">Battery</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-2">
+                        <button vlab-action="DRAW_GALVANOMETER" class="btn btn-primary">Ammeter</button>
+                    </div>
+                    <div class="col mt-2">
+                        <button vlab-action="DRAW_POTENTIOMETER" class="btn btn-primary">Voltmeter</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-2">
+                        <button style="width: 230px" vlab-action="DRAW_POINT" class="btn btn-primary">Connecting Point</button>
+                    </div>
+                    <!--<div class="col mt-2">-->
+                    <!--<button vlab-action="DRAW_TWO_WAY_KEY" class="btn btn-primary">Two Way Key</button>-->
+                    <!--</div>-->
+                </div>
+                <div class="row">
+                    <!--<div class="col mt-2">-->
+                        <!--<button vlab-action="DRAW_CONDENSER" class="btn btn-primary">Condenser</button>-->
+                    <!--</div>-->
+                    <!--<div class="col mt-2">-->
+                        <!--<button vlab-action="DRAW_TAPKEY" class="btn btn-primary">Tap Key</button>-->
+                    <!--</div>-->
+                </div>
+                <div class="row">
+                    <div class="col mt-2">
+                        <button style="width: 230px" vlab-action="MAKE_CONNECTION" class="btn btn-primary">Make Connection</button>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col mt-2">
+                        <button vlab-action="UNDO" class="btn btn-secondary">Undo</button>
+                    </div>
+                    <div class="col mt-2">
+                        <button vlab-action="REDO" class="btn btn-secondary">Redo</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-2">
+                        <button style="width: 230px" vlab-action="RESET" class="btn btn-danger">Reset</button>
+                    </div>
+                </div>
+                <div class="row mt-4" style="height: max-content;">
+                    <div class=" pl-0 pr-0 ml-3"
+                        style="border: 0px inset green;width: 230px; box-shadow: 0px 0px 20px #bbb; background-color: white;">
+                        <h6 class="text-center mb-0"
+                            style="background-color: black;border-radius: 6px;width: 230px; color: white; box-shadow: 0px 3px 20px #bbb">Message</h6>
+                        <div id="terminal" style="width: 230px">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--<div class="loader">-->
+        <!--<div style=" position: absolute; top: 42%; left: 48.5%; transform: translate(-50%,-50%);">-->
+            <!--<i class='layer'></i>-->
+            <!--<i class='layer'></i>-->
+            <!--<i class='layer'></i>-->
+        <!--</div>-->
+        <!--<div style="color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-20%);">Loading....</div>-->
+    <!--</div>-->
+</body>
+
+</html>
